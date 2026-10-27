@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>RuneCode — ambient scene review</title>
+    <style>
+      body {
+        margin: 0;
+        background: #102c32;
+        color: #e5efd3;
+        font: 16px monospace;
+      }
+      header {
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      button {
+        min-height: 44px;
+        background: #204747;
+        border: 1px solid #7c9b84;
+        color: #e5efd3;
+        padding: 0 16px;
+      }
+      canvas {
+        display: block;
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      RuneCode / ambient mist review
+      <button id="mist" aria-pressed="true">Toggle mist</button>
+    </header>
+    <div id="view"></div>
+    <script type="module">
+      import Phaser from "phaser";
+      import { drawBackdrop } from "/src/art/pixels.ts";
+      const chapter = Number(
+        new URLSearchParams(location.search).get("chapter") || 1,
+      );
+      class Review extends Phaser.Scene {
+        create() {
+          this.registry.set(
+            "reducedMotion",
+            matchMedia("(prefers-reduced-motion: reduce)").matches,
+          );
+          drawBackdrop(this, chapter, 800, 450);
+          const backdrop = this.children.getByName("pixel-backdrop");
+          let shown = true;
+          document.getElementById("mist").onclick = (e) => {
+            shown = !shown;
+            e.currentTarget.setAttribute("aria-pressed", String(shown));
+            backdrop.list
+              .filter((item) => item.name.startsWith("ambient-mist-"))
+              .forEach((item) => item.setVisible(shown));
+          };
+          this.time.delayedCall(60, () => {
+            document.documentElement.dataset.ready = "true";
+          });
+        }
+      }
+      new Phaser.Game({
+        type: Phaser.AUTO,
+        parent: "view",
+        width: 800,
+        height: 450,
+        pixelArt: true,
+        backgroundColor: "#102c32",
+        render: { antialias: false },
+        audio: { noAudio: true },
+        fps: { target: 30 },
+        scene: Review,
+      });
+    </script>
+  </body>
+</html>

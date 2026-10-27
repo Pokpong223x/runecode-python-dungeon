@@ -1,0 +1,80 @@
+.hint-box {
+  min-width: 0;
+  margin-top: 10px;
+  padding: 14px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 16px;
+}
+.hint-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--jade);
+}
+.hint-heading b {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.hint-box .hint-close.btn {
+  flex: 0 0 44px;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px;
+}
+.hint-box p {
+  margin: 8px 0 0;
+  font-size: 16px;
+  line-height: 1.7;
+}
+.hint-example {
+  min-width: 0;
+  margin-top: 14px;
+  padding-top: 6px;
+  border-top: 1px solid var(--line);
+}
+.hint-example pre {
+  max-width: 100%;
+  max-height: 224px;
+  margin: 12px 0;
+  padding: 12px;
+  overflow: auto;
+  overscroll-behavior: contain;
+  white-space: pre;
+  tab-size: 4;
+  border-radius: 4px;
+  background: var(--deep);
+  color: var(--mint);
+  font:
+    16px/1.7 Consolas,
+    Menlo,
+    monospace;
+}
+.hint-example code {
+  font: inherit;
+  color: inherit;
+}
+.hint-prediction {
+  border-top: 1px solid var(--line);
+}
+.hint-prediction summary {
+  min-height: 44px;
+  padding: 10px 0;
+  color: var(--jade);
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1.6;
+}
+.hint-prediction summary:focus-visible,
+.hint-example pre:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 2px;
+}
+.hint-box .hint-previous.btn {
+  min-height: 44px;
+  margin-top: 10px;
+  font-size: 16px;
+}

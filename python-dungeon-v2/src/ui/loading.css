@@ -1,0 +1,25 @@
+.tool-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px;
+  text-align: center;
+  background: var(--deep);
+  color: var(--mint);
+  line-height: 1.6;
+}
+.tool-loading p {
+  font-size: 14px;
+  margin: 0;
+  max-width: 32ch;
+}
+.editor-loading {
+  min-height: 380px;
+}
+.tool-loading .btn {
+  margin-top: 8px;
+  color: var(--deep);
+  background: var(--mint);
+}

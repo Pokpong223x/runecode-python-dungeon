@@ -1,0 +1,319 @@
+.cm-editor .cm-error-line {
+  background: color-mix(in srgb, var(--danger) 24%, transparent);
+  box-shadow: inset 3px 0 0 var(--gold);
+  text-decoration: underline wavy var(--gold);
+  text-underline-offset: 4px;
+}
+.ap-breakdown {
+  margin-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+}
+.ap-breakdown summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-weight: 600;
+}
+.ap-breakdown summary > svg {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.ap-breakdown[open] summary > svg {
+  transform: rotate(90deg);
+}
+.ap-breakdown summary:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 2px;
+}
+.ap-breakdown p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.ap-breakdown ul {
+  list-style: none;
+  margin: 12px 0;
+  padding: 0;
+}
+.ap-breakdown li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-block: 8px;
+}
+.ap-breakdown li.ap-row-over {
+  border-color: var(--danger);
+}
+.ap-breakdown li span {
+  display: block;
+  margin-top: 5px;
+}
+.ap-breakdown code {
+  font:
+    16px Consolas,
+    monospace;
+}
+.ap-breakdown .ap-jump,
+.ap-breakdown .ap-loop-jump {
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+}
+.ap-breakdown .ap-jump {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  align-self: start;
+}
+.ap-breakdown .ap-loop-jump {
+  grid-column: 1 / -1;
+  text-align: left;
+}
+.ap-breakdown .ap-suggestion {
+  color: var(--danger);
+}
+@media (max-width: 480px) {
+  .ap-breakdown li {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .ap-breakdown .ap-jump {
+    justify-content: space-between;
+  }
+}
+.diagnostic-jump {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 44px;
+  padding: 9px 12px;
+  border: 1px solid var(--danger);
+  border-radius: 4px;
+  color: var(--danger);
+  background: var(--surface);
+  font-size: 14px;
+}
+.diagnostic-jump:hover {
+  background: var(--paper);
+}
+.star-rules {
+  margin-top: 12px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 16px;
+}
+.star-rules summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding-block: 8px;
+  list-style: none;
+  cursor: pointer;
+  color: var(--jade);
+}
+.star-rules summary::-webkit-details-marker {
+  display: none;
+}
+.star-rules summary > svg {
+  flex-shrink: 0;
+}
+.star-rules summary > svg:last-child {
+  margin-left: auto;
+}
+.star-rules[open] summary > svg:last-child {
+  transform: rotate(90deg);
+}
+.star-rules summary:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.star-rules summary:focus-visible {
+  outline: 2px solid var(--jade);
+  outline-offset: 2px;
+}
+.star-rules p,
+.result-panel .star-rules p,
+.result-panel .result-rating-reason {
+  font-size: 16px;
+  color: var(--ink);
+}
+.star-rules ul {
+  display: grid;
+  gap: 8px;
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+}
+.star-rules li {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 4px 10px;
+}
+.star-rules .rating-glyph {
+  color: var(--jade);
+  letter-spacing: 1px;
+}
+.star-rules small {
+  color: var(--muted);
+  font-size: 14px;
+}
+@media (max-width: 680px) {
+  .star-rules li {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+  .star-rules small {
+    grid-column: 2;
+  }
+}
+.execution-bar {
+  flex-wrap: wrap;
+}
+.execution-bar .check-button {
+  font-size: 13px;
+  min-width: 108px;
+}
+.turn-preview {
+  margin-top: 16px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--jade);
+  border-top: 3px solid var(--jade);
+  border-radius: 4px;
+  color: var(--ink);
+}
+.turn-preview-heading,
+.turn-preview-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.turn-preview-heading {
+  justify-content: space-between;
+  color: var(--jade);
+  font-size: 16px;
+}
+.turn-preview-heading .icon-button {
+  border-color: var(--line);
+  flex-shrink: 0;
+}
+.turn-preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 0;
+  margin: 12px 0 16px;
+  list-style: none;
+}
+.turn-preview-actions li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  min-width: 0;
+  flex: 1 1 115px;
+}
+.turn-preview-actions .skill-art {
+  width: 32px;
+  height: 32px;
+}
+.turn-preview-actions b,
+.turn-preview-actions small {
+  display: block;
+}
+.turn-preview-actions b {
+  font-size: 14px;
+  font-weight: 600;
+}
+.turn-preview-actions small {
+  font:
+    11px Consolas,
+    Menlo,
+    monospace;
+  color: var(--muted);
+  margin-top: 3px;
+}
+.turn-preview-vitals {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  padding: 14px 0;
+  border-block: 1px solid var(--line);
+}
+.turn-preview-vitals small,
+.turn-preview-vitals b {
+  display: block;
+}
+.turn-preview-vitals small {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 3px;
+}
+.turn-preview-vitals b {
+  font-size: 16px;
+}
+.turn-preview-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+.forecast-warning,
+.forecast-explanation {
+  font-size: 16px;
+  margin: 14px 0;
+}
+.forecast-warning {
+  color: var(--danger);
+}
+@media (max-width: 1250px) {
+  .execution-bar .execution-budget {
+    width: 100%;
+    display: flex;
+  }
+  .execution-bar .execution-budget small {
+    display: none;
+  }
+  .execution-bar .btn {
+    flex: 1;
+    min-width: 0;
+  }
+}
+@media (max-width: 680px) {
+  .turn-preview {
+    padding: 13px;
+  }
+  .turn-preview-buttons .btn {
+    flex: 1;
+    padding-inline: 10px;
+  }
+}
+.cm-editor .cm-executing-line {
+  background: color-mix(in srgb, var(--gold) 18%, var(--deep));
+  box-shadow: inset 3px 0 var(--gold);
+}
+.editor-file > .editor-playback-label {
+  color: var(--gold);
+  font:
+    16px/20px "Chakra Petch",
+    sans-serif;
+  white-space: nowrap;
+}
+@media (forced-colors: active) {
+  .cm-editor .cm-executing-line {
+    outline: 1px solid Highlight;
+    outline-offset: -1px;
+  }
+}

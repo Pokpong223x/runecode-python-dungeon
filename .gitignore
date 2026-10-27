@@ -1,0 +1,16 @@
+/rea-python-dungeon/
+
+# Local verification records and release diaries
+/python-dungeon-v2/VERIFICATION.md
+/python-dungeon-v2/premium-audit.json
+/python-dungeon-v2/docs/EIGHT-HOUR-SPRINT.md
+/python-dungeon-v2/docs/RELEASE-HANDOVER.md
+
+# Credentials and exported player progress
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+runecode-*.json

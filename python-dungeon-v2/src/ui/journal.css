@@ -1,0 +1,188 @@
+.journal-intro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  color: var(--jade);
+}
+.journal-intro p,
+.journal-notes-help {
+  color: var(--muted);
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+.journal-search-label {
+  display: block;
+  margin: 20px 0 8px;
+  font-weight: 600;
+}
+.journal-search {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  padding-left: 12px;
+  gap: 8px;
+  border: 1px solid var(--thumb);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.journal-search > svg {
+  flex-shrink: 0;
+  color: var(--jade);
+}
+.journal-search input {
+  width: 100%;
+  min-width: 0;
+  min-height: 48px;
+  padding: 8px 4px;
+  font-size: 16px;
+  color: var(--ink);
+  background: transparent;
+  border: 0;
+}
+.journal-search input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.journal-filter-row,
+.journal-lesson-heading,
+.journal-excerpt-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+}
+.journal-filter-row {
+  margin: 5px 0 12px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.learning-journal .journal-lessons {
+  grid-template-columns: minmax(0, 1fr);
+}
+.journal-chapter {
+  min-width: 0;
+}
+.journal-completed-filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  cursor: pointer;
+}
+.journal-completed-filter input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--jade);
+}
+.journal-lessons .journal-chapter > summary {
+  min-height: 64px;
+  font-size: 16px;
+}
+.journal-lessons .journal-chapter-title {
+  display: inline;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.journal-lessons .journal-chapter-subtitle {
+  color: var(--muted);
+  font-size: 14px;
+}
+.journal-lesson-heading h3 {
+  margin: 0;
+}
+.journal-lesson-state {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.journal-lesson-state.completed {
+  color: var(--jade);
+  font-weight: 600;
+}
+.learning-journal .lesson-note > p,
+.learning-journal .journal-example > p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.journal-concepts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+}
+.journal-concepts li {
+  padding: 3px 8px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  color: var(--jade);
+  font-size: 14px;
+}
+.journal-own-code {
+  margin: 14px 0;
+}
+.journal-own-code > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 5px;
+}
+.journal-excerpt-heading {
+  font-size: 14px;
+}
+.journal-excerpt .btn {
+  min-height: 44px;
+}
+.learning-journal .journal-excerpt pre {
+  font-size: 16px;
+  line-height: 1.7;
+  max-height: 320px;
+  white-space: pre;
+  tab-size: 4;
+  overscroll-behavior: contain;
+}
+.learning-journal .journal-copy-feedback {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 8px 0;
+  color: var(--jade);
+}
+.journal-copy-feedback:empty {
+  display: none;
+}
+.journal-lessons .journal-example {
+  border: 0;
+  border-top: 1px dashed var(--thumb);
+  border-radius: 0;
+  margin-top: 16px;
+  padding-top: 4px;
+}
+.journal-lessons .journal-example > summary {
+  min-height: 44px;
+  background: transparent;
+  padding: 10px 0;
+  color: var(--jade);
+  font-size: 14px;
+}
+.journal-empty {
+  padding: 18px;
+  border: 1px dashed var(--thumb);
+  text-align: center;
+}
+.journal-empty p {
+  margin: 0 0 15px;
+}
+.journal-notes-help {
+  margin: -4px 0 12px;
+}
+.learning-journal .notes {
+  font-size: 16px;
+}

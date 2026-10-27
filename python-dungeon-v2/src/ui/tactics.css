@@ -1,0 +1,56 @@
+.boss-phase {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--jade);
+  font-size: 13px;
+  white-space: nowrap;
+}
+.boss-phase-pips {
+  display: flex;
+  gap: 3px;
+}
+.boss-phase-pips i {
+  width: 8px;
+  height: 12px;
+  background: var(--line);
+  border: 1px solid var(--jade);
+  transform: skewX(-10deg);
+}
+.boss-phase-pips i[data-reached="true"] {
+  background: var(--jade);
+}
+.combat-column > .enemy-tactics .boss-phase-note {
+  grid-column: 1 / -1;
+  border-top: 1px solid var(--line);
+  padding-top: 10px;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+.player-effect {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin: 0 0 12px;
+  padding: 10px;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--gold) 8%, var(--deep));
+}
+.player-effect > svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.player-effect b {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.player-effect p {
+  color: var(--mint);
+  margin: 4px 0 0;
+  font-size: 13px;
+  line-height: 1.65;
+}

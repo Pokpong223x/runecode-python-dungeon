@@ -1,0 +1,99 @@
+.campaign-summary {
+  padding: 24px;
+  margin: 0 0 28px;
+  border: 1px solid var(--jade);
+  border-left: 4px solid var(--jade);
+  border-radius: 4px;
+  background: var(--surface);
+}
+.campaign-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+.campaign-title .skill-art {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.campaign-title h2 {
+  font-size: 24px;
+  margin: 5px 0 8px;
+  line-height: 1.4;
+}
+.campaign-title p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+.campaign-milestones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 36px;
+  list-style: none;
+  padding: 18px 0;
+  margin: 20px 0 0;
+  border-block: 1px solid var(--line);
+}
+.campaign-milestones li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 9px;
+  align-items: center;
+}
+.campaign-milestones svg {
+  color: var(--jade);
+}
+.campaign-milestones b {
+  font-size: 24px;
+}
+.campaign-milestones span {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 14px;
+}
+.campaign-next {
+  font-size: 16px;
+  margin: 17px 0;
+}
+.campaign-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.campaign-practice {
+  display: block;
+  margin-top: 13px;
+  font-size: 13px;
+  color: var(--muted);
+}
+@media (max-width: 680px) {
+  .campaign-summary {
+    padding: 18px 14px;
+  }
+  .campaign-title {
+    gap: 12px;
+  }
+  .campaign-title .skill-art {
+    width: 44px;
+    height: 44px;
+  }
+  .campaign-title h2 {
+    font-size: 20px;
+  }
+  .campaign-title p {
+    font-size: 14px;
+  }
+  .campaign-milestones {
+    gap: 16px;
+  }
+  .campaign-milestones b {
+    font-size: 20px;
+  }
+  .campaign-milestones span {
+    font-size: 12px;
+  }
+  .campaign-actions .btn {
+    flex: 1 1 150px;
+  }
+}

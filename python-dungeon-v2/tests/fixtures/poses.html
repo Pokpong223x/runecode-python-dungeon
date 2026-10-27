@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>RuneCode — connected pose review</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #102c32;
+        color: #fff6d9;
+        font: 16px monospace;
+      }
+      h1 {
+        margin: 24px;
+        font-size: 22px;
+      }
+      p {
+        margin: 0 24px 20px;
+        color: #b5d3c6;
+      }
+      canvas {
+        display: block;
+        image-rendering: pixelated;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>RuneCode / complete pose silhouettes</h1>
+    <p>
+      Actual Phaser renderer · idle / anticipation / contact / recovery / guard
+      / cast / hurt / victory
+    </p>
+    <div id="review"></div>
+    <script type="module">
+      import Phaser from "phaser";
+      import { createActor } from "/src/art/pixels.ts";
+      import { POSES } from "/src/art/pose.ts";
+      const allKinds = [
+        "adventurer",
+        "knight",
+        "wizard",
+        "skeleton",
+        "golem",
+        "lich",
+        "slime",
+        "spider",
+        "wisp",
+      ];
+      const kinds =
+        new URLSearchParams(location.search).get("group") === "heroes"
+          ? allKinds.slice(0, 3)
+          : allKinds;
+      class Review extends Phaser.Scene {
+        create() {
+          this.registry.set("reducedMotion", true);
+          kinds.forEach((kind, row) => {
+            POSES.forEach((pose, col) => {
+              const x = col * 225,
+                y = row * 185;
+              this.add
+                .rectangle(
+                  x + 112,
+                  y + 93,
+                  223,
+                  183,
+                  row % 2 ? 0x183c41 : 0x163438,
+                )
+                .setDepth(-1);
+              this.add.text(x + 12, y + 10, `${kind} / ${pose}`, {
+                fontFamily: "monospace",
+                fontSize: "13px",
+                color: "#c9dec6",
+              });
+              const actor = createActor(this, kind, x + 105, y + 163, 4);
+              actor.getData("rig").pose(pose, 1);
+            });
+          });
+          this.time.delayedCall(200, () => {
+            document.documentElement.dataset.ready = "true";
+          });
+        }
+      }
+      new Phaser.Game({
+        type: Phaser.AUTO,
+        parent: "review",
+        width: 1800,
+        height: kinds.length * 185,
+        pixelArt: true,
+        backgroundColor: "#102c32",
+        render: { antialias: false },
+        audio: { noAudio: true },
+        scene: Review,
+      });
+    </script>
+  </body>
+</html>

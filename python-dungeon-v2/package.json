@@ -1,0 +1,40 @@
+{
+  "name": "runecode-python-dungeon",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --exclude tests/browser/** --exclude tests/journey/**",
+    "test:e2e": "playwright test",
+    "build": "npm run typecheck && npm run notices && vite build && node scripts/build-offline.mjs",
+    "notices": "node scripts/build-notices.mjs",
+    "runtime": "node scripts/copy-runtime.mjs",
+    "postinstall": "npm run runtime && npm run notices",
+    "format": "prettier --write src tests scripts *.json *.html *.md"
+  },
+  "dependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/state": "^6.5.2",
+    "@codemirror/view": "^6.38.0",
+    "@fontsource/chakra-petch": "^5.3.0",
+    "codemirror": "^6.0.2",
+    "lucide-react": "^0.468.0",
+    "phaser": "3.90.0",
+    "pyodide": "314.0.7",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.0.0",
+    "prettier": "^3.7.0",
+    "typescript": "^5.9.3",
+    "vite": "8.3.4",
+    "vitest": "^4.0.0"
+  }
+}

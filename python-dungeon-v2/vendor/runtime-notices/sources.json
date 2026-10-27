@@ -1,0 +1,39 @@
+{
+  "pyodide": "314.0.7",
+  "python": "3.14.2",
+  "platform": "emscripten_5_0_3",
+  "sources": [
+    {
+      "name": "Pyodide",
+      "version": "314.0.7",
+      "file": "pyodide-314.0.7-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/pyodide/pyodide/314.0.7/LICENSE",
+      "bytes": 16725,
+      "sha256": "1f256ecad192880510e84ad60474eab7589218784b9a50bc7ceee34c2b91f1d5"
+    },
+    {
+      "name": "CPython",
+      "version": "3.14.2",
+      "file": "cpython-3.14.2-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.14.2/LICENSE",
+      "bytes": 13804,
+      "sha256": "b0e25a78cffb43f4d92de8b61ccfa1f1f98ecbc22330b54b5251e7b6ba010231"
+    },
+    {
+      "name": "CPython acknowledgements",
+      "version": "3.14.2",
+      "file": "cpython-3.14.2-ACKNOWLEDGEMENTS.rst",
+      "url": "https://raw.githubusercontent.com/python/cpython/v3.14.2/Doc/license.rst",
+      "bytes": 57595,
+      "sha256": "c695d550b135e53e38807e76496d1db17d22c40e461d1f3f354c86188d3305dd"
+    },
+    {
+      "name": "Emscripten",
+      "version": "5.0.3",
+      "file": "emscripten-5.0.3-LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/emscripten-core/emscripten/5.0.3/LICENSE",
+      "bytes": 5093,
+      "sha256": "620a78084fc7ca97c0b5dea9abf891f3ffcadfdbf305276f099c9c4e12fc1d86"
+    }
+  ]
+}

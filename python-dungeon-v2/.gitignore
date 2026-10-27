@@ -1,0 +1,8 @@
+node_modules/
+dist/
+artifacts/
+public/python/
+public/THIRD-PARTY-NOTICES.txt
+test-results/
+playwright-report/
+.verification/
